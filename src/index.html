@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Место (mesto) - проектная работа в Яндекс.Практикуме. Спринты 4 - 6.">
+  <meta name="author" content="Панкратов Юрий">
+  <meta name="creator" content="Яндекс.Практикум">
+  <meta name="keywords" content="портфолио, html, css, javascript, БЭМ">
+  <meta name="robots" content="noindex">
+  <title>Место</title>
+  <!-- <link rel="stylesheet" href="./pages/index.css"> -->
+</head>
+<body class="root">
+  <div class="page">
+    <header class="header">
+      <img src="<%=require('./images/logo-white.svg')%>" alt="Логотип" class="header__logo">
+    </header>
+    <main>
+      <section class="profile">
+        <div class="profile__container">
+          <button class="profile__avatar-edit-button" type="button"><img src="<%=require('./images/img-profile-avatar.jpg')%>" alt="Аватар для профайла" class="profile__avatar"></button>
+          <div class="profile__describe">
+            <div class="profile__title-wrapper">
+              <h1 class="profile__title">Жак-Ив Кусто</h1>
+              <button class="profile__edit-button" type="button"></button>
+            </div>
+            <p class="profile__subtitle">Исследователь океана</p>
+          </div>
+        </div>
+        <button class="profile__add-button" type="button"></button>
+      </section>
+      <section class="cards">
+        <ul class="cards__list"></ul>
+      </section>
+    </main>
+    <footer class="footer">
+      <p class="footer__copyright">&copy; 2025 Mesto Russia</p>
+    </footer>
+  </div>
+<!-- POPUP 1: profile editing form -->
+  <section class="popup popup_type_profile">
+    <div class="popup__container">
+      <button class="popup__close-button" type="button"></button>
+      <div class="popup__content">
+        <h3 class="popup__title">Редактировать профиль</h3>
+        <form name="popup-profile-form" class="popup__input-list" novalidate>
+          <label class="popup__field">
+            <input id="name-input" name="userName" class="popup__input" type="text" placeholder="Имя" minlength="2" maxlength="40" required />
+            <span class="popup__input-error"></span>
+          </label>
+          <label class="popup__field">
+            <input id="about-input" name="userAbout" class="popup__input" type="text" placeholder="О себе" minlength="2" maxlength="200" required />
+            <span class="popup__input-error"></span>
+          </label>
+          <button class="popup__save-button popup__save-button_inactive" type="submit">Сохранить</button>
+        </form>
+      </div>
+    </div>
+  </section>
+<!-- POPUP 2: change profile avatar -->
+  <section class="popup popup_type_avatar">
+    <div class="popup__container">
+      <button class="popup__close-button" type="button"></button>
+      <div class="popup__content">
+        <h3 class="popup__title">Обновить аватар</h3>
+        <form name="popup-avatar-form" class="popup__input-list" novalidate>
+          <label class="popup__field">
+            <input id="avatar-input" name="url" class="popup__input" type="url" placeholder="Ссылка на аватар" required />
+            <span class="popup__input-error"></span>
+          </label>
+          <button class="popup__save-button popup__save-button_inactive" type="submit">Сохранить</button>
+        </form>
+      </div>
+    </div>
+  </section>
+<!-- POPUP 3: card adding form -->
+  <section class="popup popup_type_cards">
+    <div class="popup__container">
+      <button class="popup__close-button" type="button"></button>
+      <div class="popup__content">
+        <h3 class="popup__title">Новое место</h3>
+        <form name="popup-cards-form" class="popup__input-list" novalidate>
+          <label class="popup__field">
+            <input id="place-input" name="name" class="popup__input" type="text" placeholder="Название" minlength="2" maxlength="30" required />
+            <span class="popup__input-error"></span>
+          </label>
+          <label class="popup__field">
+            <input id="url-input" name="link" class="popup__input" type="url" placeholder="Ссылка на картинку" required />
+            <span class="popup__input-error"></span>
+          </label>
+          <button class="popup__save-button popup__save-button_inactive" type="submit">Создать</button>
+        </form>
+      </div>
+    </div>
+  </section>
+<!-- POPUP 4: confirm card deletion -->
+  <section class="popup popup_type_confirm-deletion">
+    <div class="popup__container">
+      <button class="popup__close-button" type="button"></button>
+      <div class="popup__content">
+        <h3 class="popup__title">Вы уверены?</h3>
+        <form name="popup-confirmation-form" class="popup__input-list" novalidate>
+          <button class="popup__save-button" type="submit">Да</button>
+        </form>
+      </div>
+    </div>
+  </section>
+  <!-- POPUP 5: image preview -->
+  <section class="popup popup_type_image">
+    <figure class="popup__container popup__container_type_image">
+      <button class="popup__close-button popup__close-button_type_image" type="button"></button>
+      <img src="#" alt="" class="popup__image">
+      <figcaption class="popup__figcaption"></figcaption>
+    </figure>
+  </section>
+<!-- TEMPLATE for cards-->
+  <template id="template" class="template">
+    <li class="card">
+      <img src="#" alt="" class="card__image">
+      <button class="card__del-button" type="button"></button>
+      <div class="card__wrapper">
+        <h2 class="card__title"></h2>
+        <div class="card__likes-wrapper">
+          <button class="card__like-button" type="button"></button>
+          <p class="card__likes-counter"></p>
+        </div>
+      </div>
+    </li>
+  </template>
+  <!-- <script type="module" src="./pages/index.js" defer></script> -->
+</body>
+</html>
