@@ -11,17 +11,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pnrf/mesto.git"
+    "url": "git+https://github.com/roman-245/frontend_mesto.git"
   },
   "keywords": [
     "mesto"
   ],
-  "author": "Yuri A. Pankratov",
+  "author": "Roman P.",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/pnrf/mesto/issues"
+    "url": "https://github.com/roman-245/frontend_mesto/issues"
   },
-  "homepage": "https://github.com/pnrf/mesto#readme",
+  "homepage": "https://github.com/roman-245/frontend_mesto#readme",
   "devDependencies": {
     "@babel/core": "^7.17.12",
     "@babel/preset-env": "^7.17.12",
