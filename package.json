@@ -9,8 +9,12 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/roman-245/frontend_mesto.git"
+  },
   "keywords": [
-    "frontend-mesto"
+    "mesto"
   ],
   "author": "Roman P.",
   "license": "ISC",
